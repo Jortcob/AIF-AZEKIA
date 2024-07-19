@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Datos</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/empresas">EMPRESAS</a>
+    <a href="/clientes">CLIENTES</a>
+    <a href="/proyectos">PROYECTOS</a>
+    <a href="/series">SERIES</a>
+    <a href="/facturas">FACTURAS</a>
+    <a href="/impuestos">IMPUESTOS</a>
+    <span class="usuario">Javier Ortega Cobos</span>
+  </div>
+
+  <div class="tabla-contenedor">
+
+
+    <div>
+      <!-- Sección de la tabla de ProyectoProducido -->
+      <h2>Listado de Proyecto Producido</h2>
+
+      <div class="contenedorBtn">
+        <button onclick="mostrarModalAgregarProyectoProducido()" id="btnAgregarProyectoProducido"></button>
+      </div>
+
+      <table id="tablaProyectoProducido">
+        <tr>
+          <th>Proyecto</th>
+          <th>Fecha</th>
+          <th>Importe</th>
+          <th>Acciones</th>
+        </tr>
+        <!-- Aquí se insertarán los datos de la tabla ProyectoProducido -->
+      </table>
+
+      <div>
+
+
+        <!-- Modal para agregar ProyectoProducido -->
+        <div id="modalAgregarProyectoProducido" class="modal" style="display: none;">
+          <div class="modal-content modal-content-detalleProyecto">
+            <div class="tituloForm">
+              <h3>Formulario para Agregar Proyecto Producido</h3>
+            </div>
+            <form id="formularioAgregarProyectoProducido">
+              <div class="labelUQ">
+                <label for="proyectoCodProducido">Proyecto</label><br>
+                <select id="proyectoCodProducido" name="proyectoCodProducido"></select>
+              </div>
+              <div class="labelUQ">
+                <label for="fechaProducido">Fecha</label><br>
+                <input type="date" id="fechaProducido" name="fechaProducido">
+              </div>
+              <div class="labelUQ">
+                <label for="importeProducido">Importe</label><br>
+                <input type="number" id="importeProducido" name="importeProducido" step="0.01" min="0">
+              </div>
+              <!-- Botón para guardar ProyectoProducido -->
+              <div class="footerForm">
+                <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+                <button class="btnGuardar" type="button" onclick="guardarProyectoProducido()">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Modal para editar ProyectoProducido -->
+        <div id="modalEditarProyectoProducido" class="modal" style="display: none;">
+          <div class="modal-content modal-content-detalleProyecto">
+            <div class="tituloForm">
+              <h3>Editar Detalles del Proyecto Producido</h3>
+            </div>
+            <form id="formularioEditarProyectoProducido">
+              <div class="labelUQ">
+                <label for="proyectoCodEditarProducido">Proyecto</label><br>
+                <select id="proyectoCodEditarProducido" name="proyectoCodEditarProducido"></select>
+              </div>
+              <div class="labelUQ">
+                <label for="fechaEditarProducido">Fecha</label><br>
+                <input type="date" id="fechaEditarProducido" name="fechaEditarProducido">
+              </div>
+              <div class="labelUQ">
+                <label for="importeEditarProducido">Importe</label><br>
+                <input type="number" id="importeEditarProducido" name="importeEditarProducido" step="0.01" min="0">
+              </div>
+              <!-- Botón para guardar cambios en ProyectoProducido -->
+              <div class="footerForm">
+                <button class="btnBorrar" type="button" onclick="ClicEliminarProyectoProducido()">Borrar</button>
+                <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+                <button class="btnGuardar" type="button" onclick="actualizadaProyectoProducido()">Confirmar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div>
+      <!-- Sección de la tabla de ProyectoCertificado -->
+      <h2>Listado de Proyecto Certificado</h2>
+
+
+      <table id="tablaProyectoCertificado">
+        <tr>
+          <th>Proyecto</th>
+          <th>Fecha</th>
+          <th>Importe</th>
+          <th>Acciones</th>
+        </tr>
+        <!-- Aquí se insertarán los datos de la tabla ProyectoCertificado -->
+      </table>
+    </div>
+
+  </div>
+
+
+  <!-- Script para cargar datos de la tabla Proyectos -->
+  <script defer src="../../pages/proyectos/detallesProyectos/detallesProyectos.js"></script>
+  <script defer src="../../pages/funcionesGenerales.js"></script>
+
+</body>
+
+</html>

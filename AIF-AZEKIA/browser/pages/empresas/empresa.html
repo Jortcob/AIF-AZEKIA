@@ -1,0 +1,153 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Datos</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+
+  <a href="/empresas">EMPRESAS</a>
+  <a href="/clientes">CLIENTES</a>
+  <a href="/proyectos">PROYECTOS</a>
+  <a href="/series">SERIES</a>
+  <a href="/facturas">FACTURAS</a>
+  <a href="/impuestos">IMPUESTOS</a>
+
+  <span class="usuario">Javier Ortega Cobos</span>
+  
+</div>
+
+<!-- Tabla de Datos -->
+<h2>Listado de Empresas</h2>
+
+<div class="contenedorBtn">
+  <button onclick="mostrarModalAgregarEmpresa()" id="btnAgregar"></button>
+</div>
+
+
+<table id="tablaEmpresas">
+  <tr>
+    <th>Cod Empresas</th>
+    <th>CIF</th>
+    <th>Razón Social</th>
+    <th>Dirección</th>
+    <th>CP</th>
+    <th>Municipio</th>
+    <th>Acciones</th>
+  </tr>
+</table>
+
+<div id="modalAgregarEmpresa" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Formulario para Agregar Empresa</h3>
+    </div>
+    <form id="formularioAgregarEmpresa">
+
+      <div class="labelpck">
+        <div style="flex: 1; margin-right: 10px;">
+          <label for="codEmpresa">Cod Empresa</label><br>
+          <input type="text" id="codEmpresa" name="codEmpresa">
+        </div>
+
+        <div style="flex: 1; margin-left: 10px;">
+          <label for="cif">CIF</label><br>
+          <input type="text" id="cif" name="cif">
+        </div>
+      </div>
+    
+      <div class="labelUQ">
+        <label for="razonSocial">Razón Social</label><br>
+        <input type="text" id="razonSocial" name="razonSocial" class="inputlg">
+      </div>
+
+      <div class="labelUQ">
+        <label for="direccion">Dirección</label><br>
+        <input type="text" id="direccion" name="direccion" class="inputlg">
+      </div>
+    
+      <div class="labelpck">
+        <div style="flex: 1;">
+          <label for="cp">CP</label><br>
+          <input type="text" id="cp" name="cp">
+        </div>
+
+        <div style="flex: 1;">
+          <label for="municipio">Municipio</label><br>
+          <input type="text" id="municipio" name="municipio">
+        </div>
+      </div>
+      <!-- Botón para guardar la empresa -->
+      <div class="footerForm">
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="guardarEmpresa()">Guardar</button>
+      </div>
+    </form>  
+  </div>
+</div>
+
+<div id="modalEditarEmpresa" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Editar Detalles de la Empresa</h3>
+    </div>
+    <form id="formularioEditarEmpresa">
+
+      <div class="labelpck">
+        <div style="flex: 1; margin-right: 10px;">
+          <label for="codEmpresa">Cod Empresa</label><br>
+          <input type="text" id="codEmpresaeditar" name="codEmpresa">
+        </div>
+
+        <div style="flex: 1; margin-left: 10px;">
+          <label for="cif">CIF</label><br>
+          <input type="text" id="cifeditar" name="cif">
+        </div>
+      </div>
+    
+      <div class="labelUQ">
+        <label for="razonSocial">Razón Social</label><br>
+        <input type="text" id="razonSocialeditar" name="razonSocial" class="inputlg">
+      </div>
+
+      <div class="labelUQ">
+        <label for="direccion">Dirección</label><br>
+        <input type="text" id="direccioneditar" name="direccion" class="inputlg">
+      </div>
+    
+      <div class="labelpck">
+        <div style="flex: 1;">
+          <label for="cp">CP</label><br>
+          <input type="text" id="cpeditar" name="cp">
+        </div>
+
+        <div style="flex: 1;">
+          <label for="municipio">Municipio</label><br>
+          <input type="text" id="municipioeditar" name="municipio">
+        </div>
+      </div>
+      <!-- Botón para guardar la empresa -->
+      <div class="footerForm">
+        <button class="btnBorrar" type="button" onclick="ClicEliminarEmpresa()">Borrar</button>
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="actualizadaempresa()">Confirmar</button>
+      </div>
+    </form>   
+  </div>
+</div>
+
+
+
+
+
+<script defer src="../../pages/empresas/empresa.js"></script>
+<script defer src="../../pages/funcionesGenerales.js"></script>
+
+</body>
+</html>

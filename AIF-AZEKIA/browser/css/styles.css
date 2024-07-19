@@ -1,0 +1,590 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  margin-top: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  display: inline-block;
+  ;
+  color: white;
+  text-align: left;
+  padding: 14px 30px;
+  text-decoration: none;
+  margin-top: 50px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: #c6af05;
+}
+
+.usuario {
+  margin-left: 350px;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Fondo oscuro */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 450px;
+  height: 400px;
+  align-items: center;
+  text-align: center;
+  border: solid 1px black;
+  position: relative;
+}
+
+.modal-content-proyecto {
+  height: 480px;
+}
+
+#formularioEditarProyecto {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioEditarProyecto label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#nombreEditarProyecto {
+  margin-top: 5px;
+}
+
+#formularioAgregarProyecto {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioAgregarProyecto label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#nombreProyecto {
+  margin-top: 5px;
+}
+
+#formularioAgregarEmpresa {
+  margin-top: 70px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioAgregarEmpresa label {
+  font-weight: bold;
+}
+
+#formularioAgregarEmpresa input {
+  border: solid 1px black;
+}
+
+#formularioEditarEmpresa {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioEditarEmpresa label {
+  font-weight: bold;
+}
+
+#editarEmpresaForm input {
+  border: solid 1px black;
+}
+
+#formularioAgregarCliente {
+  margin-top: 70px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioAgregarCliente label {
+  font-weight: bold;
+}
+
+#formularioAgregarCliente input {
+  border: solid 1px black;
+}
+
+#formularioAgregarProyectoProducido,
+#formularioEditarProyectoProducido {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+.modal-content-detalleProyecto {
+  height: 305px;
+}
+
+#formularioEditarCliente {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioEditarCliente label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#formularioEditarCliente input {
+  border: solid 1px black;
+  margin-top: 5px;
+}
+
+#formularioAgregarImpuesto {
+  margin-top: 80px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioAgregarImpuesto label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#formularioAgregarImpuesto input {
+  border: solid 1px black;
+}
+
+#tipoImpuesto {
+  margin-top: 5px;
+}
+
+#formularioEditarImpuesto {
+  margin-top: 80px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioEditarImpuesto label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#tipoImpuestoEditar {
+  margin-top: 5px;
+}
+
+#formularioEditarImpuesto input {
+  border: solid 1px black;
+}
+
+#formularioAgregarSerie {
+  margin-top: 70px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioAgregarSerie label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#formularioAgregarSerie input {
+  border: solid 1px black;
+}
+
+#descripcionSerie {
+  margin-top: 5px;
+}
+
+#formularioEditarSerie {
+  margin-top: 80px;
+  padding-bottom: 20px;
+  border: solid 1px rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgb(230, 229, 229);
+}
+
+#formularioEditarSerie label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#descripcionEditar {
+  margin-top: 5px;
+}
+
+#formularioEditarSerie input {
+  border: solid 1px black;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.labelUQ {
+  text-align: left;
+  margin-left: 22px;
+  margin-top: 22px;
+}
+
+.labelpck {
+  margin-top: 22px;
+  display: flex;
+  text-align: left;
+  margin-left: 22px;
+}
+
+.inputlg {
+  width: 300px;
+}
+
+#codEmpresaeditar {
+  border: none;
+}
+
+#codClienteeditar {
+  border: none;
+}
+
+.btnGuardar {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 15px;
+  background-color: #099c4b;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.btnGuardar:hover {
+  background-color: #11531f;
+}
+
+.btnCancelar {
+  margin-top: 15px;
+  background-color: rgb(219, 219, 219);
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-left: 230px;
+}
+
+.btnCancelar:hover {
+  background-color: #636764;
+}
+
+.btnBorrar {
+  margin-left: 5px;
+  margin-top: 15px;
+  background-color: #e02a2a;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.btnBorrar:hover {
+  background-color: #5e1a1a;
+}
+
+.tituloForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  height: 60px;
+  background-color: #222222;
+  color: white;
+}
+
+.footerForm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #000000;
+  height: 50px;
+  background-color: #888;
+}
+
+.contenedorBtn {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  margin-left: 650px;
+}
+
+#btnAgregar,
+#btnAgregarProyectoCertificado,
+#btnAgregarProyectoProducido {
+  width: 27px;
+  height: 27px;
+  background-image: url("../Images/anadir.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.modalborrar {
+  display: none;
+  /* Ocultar el modal por defecto */
+  position: fixed;
+  /* Posición fija para cubrir toda la ventana */
+  z-index: 1;
+  /* Situar el modal por encima del contenido */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Añadir desplazamiento si es necesario */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo oscuro semitransparente */
+}
+
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 300px;
+  height: 100px;
+}
+
+#confirmarBtn {
+  background-color: #12934c;
+}
+
+#confirmarBtn:hover {
+  background-color: #0e773d
+}
+
+#cancelarBtn {
+  background-color: #f44336;
+}
+
+#cancelarBtn:hover {
+  background-color: #d32f2f;
+}
+
+.dialogo-error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffcccc;
+  color: #ff0000;
+  padding: 20px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+/* Estilo Para El Login */
+
+#horaRegistro {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  border: none;
+}
+
+.card-header {
+  background-color: rgb(66, 62, 62);
+  color: white;
+  border: none;
+}
+
+.card-body {
+  background-color: rgb(201, 198, 198);
+  border: none;
+
+}
+
+.form-label {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.form-control {
+  border: solid 1px;
+}
+
+.boton {
+  margin-top: 15px;
+  border: solid 1px #415367;
+  border-radius: 1.3rem;
+  background-color: #627d9b;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #4d6178;
+  color: white;
+  border: solid 1px #161c23;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.boton:active,
+.boton:focus {
+  background-color: #3d4d60;
+  color: white;
+  border: solid 1px #161c23;
+}
+
+.btn-lg {
+  width: 220px;
+}
+
+.container-turn {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  background-color: rgb(174, 164, 164);
+  width: calc(100% - 20px);
+  max-width: 420px;
+  height: 360px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  border: solid 1px rgb(94, 85, 85);
+  padding: 5px;
+}
+
+.container-form {
+  margin-top: 70px;
+
+}
+
+.container-form button {
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border: solid 1px rgb(40, 40, 40);
+
+}
+
+.container-form button:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+  border: solid 1px rgb(40, 40, 40);
+}
+
+.titulo {
+  margin-top: 22px;
+  font-weight: bold;
+}
+
+.botonDetalles {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.botonDetalles:hover {
+  background-color: #45a049;
+}
+
+.botonDetalles:active {
+  background-color: #357a38; 
+}
+
+
+@media (min-width: 1300px) {
+  .tabla-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

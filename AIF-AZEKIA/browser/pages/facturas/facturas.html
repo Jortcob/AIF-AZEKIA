@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Facturas</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+
+  <a href="/empresas">EMPRESAS</a>
+  <a href="/clientes">CLIENTES</a>
+  <a href="/proyectos">PROYECTOS</a>
+  <a href="/series">SERIES</a>
+  <a href="/facturas">FACTURAS</a>
+  <a href="/impuestos">IMPUESTOS</a>
+
+  <span class="usuario">Javier Ortega Cobos</span>
+
+</div>
+
+<!-- Tabla de Datos -->
+<h2>Listado de Facturas</h2>
+
+<div class="contenedorBtn">
+  <button onclick="mostrarModalAgregarEmpresa()" id="btnAgregar"></button>
+</div>
+
+<table id="tablaFacturas">
+  <tr>
+    <th>Empresa</th>
+    <th>Serie</th>
+    <th>Num Factura</th>
+    <th>Cliente</th>
+    <th>Fecha Emisión</th>
+    <th>Bloqueada</th>
+    <th>Acciones</th>
+  </tr>
+</table>
+
+<div id="modalborrar" class="modalborrar">
+  <div class="modal-contenido">
+    <p>¿Estás seguro de que quieres eliminar esta factura?</p>
+    <button id="confirmarBtn">Aceptar</button>
+    <button id="cancelarBtn">Cancelar</button>
+  </div>
+</div>
+
+<script defer src="../../pages/facturas/factura.js"></script>
+<script defer src="../../pages/funcionesGenerales.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Datos</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <a href="/empresas">EMPRESAS</a>
+  <a href="/clientes">CLIENTES</a>
+  <a href="/proyectos">PROYECTOS</a>
+  <a href="/series">SERIES</a>
+  <a href="/facturas">FACTURAS</a>
+  <a href="/impuestos">IMPUESTOS</a>
+  <span class="usuario">Javier Ortega Cobos</span>
+</div>
+
+<!-- Tabla de Datos -->
+<h2>Listado de Series</h2>
+
+<div class="contenedorBtn">
+  <button onclick="mostrarModalAgregarSerie()" id="btnAgregar"></button>
+</div>
+
+<table id="tablaSeries">
+  <tr>
+    <th>Empresa</th>
+    <th>Serie</th>
+    <th>Descripción</th>
+    <th>Último Número Usado</th>
+    <th>Acciones</th>
+  </tr>
+  <!-- Aquí se insertarán los datos de la tabla Series -->
+</table>
+
+<!-- Modal para agregar serie -->
+<div id="modalAgregarSerie" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Formulario para Agregar Serie</h3>
+    </div>
+    <form id="formularioAgregarSerie">
+      <div class="labelpck">
+        <label for="empresaCod">Empresa</label><br>
+        <select id="empresaCod" name="empresaCod"></select>
+      </div>
+      <div class="labelpck">
+        <label for="serieCod">Serie</label><br>
+        <input type="text" id="serieCod" name="serieCod">
+      </div>
+      <div class="labelUQ">
+        <label for="descripcion">Descripción</label><br>
+        <input type="text" id="descripcion" name="descripcion" class="inputlg">
+      </div>
+      <div class="labelpck">
+        <label for="ultimoNumUsado">Último Número Usado</label><br>
+        <input type="number" id="ultimoNumUsado" name="ultimoNumUsado">
+    </div>
+      <!-- Botón para guardar serie -->
+      <div class="footerForm">
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="guardarSerie()">Guardar</button>
+      </div>
+    </form>  
+  </div>
+</div>
+
+<!-- Modal para editar serie -->
+<div id="modalEditarSerie" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Editar Detalles de la Serie</h3>
+    </div>
+    <form id="formularioEditarSerie">
+      <div class="labelpck">
+        <label for="empresaCodEditar">Empresa</label><br>
+        <input type="hidden" id="empresaCodEditar" name="empresaCodEditar">
+        <input id="razonSocialEmpresa" name="razonSocialEmpresa">
+      </div>
+      <div class="labelpck">
+        <label for="serieCodEditar">Serie Cod</label><br>
+        <input type="text" id="serieCodEditar" name="serieCodEditar" readonly>
+      </div>
+      <div class="labelUQ">
+        <label for="descripcionEditar">Descripción</label><br>
+        <input type="text" id="descripcionEditar" name="descripcionEditar" class="inputlg">
+      </div>
+      <div class="labelpck">
+        <label for="ultimoNumUsadoEditar">Último Número Usado</label><br>
+        <input type="text" id="ultimoNumUsadoEditar" name="ultimoNumUsadoEditar">
+      </div>
+      <!-- Botones para acciones sobre la serie -->
+      <div class="footerForm">
+        <button class="btnBorrar" type="button" onclick="ClicEliminarSerie()">Borrar</button>
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="actualizadaSerie()">Confirmar</button>
+      </div>
+    </form>   
+  </div>
+</div>
+
+<!-- Script para cargar datos de la tabla Series -->
+<script defer src="../../pages/series/serie.js"></script>
+<script defer src="../../pages/funcionesGenerales.js"></script>
+
+</body>
+</html>

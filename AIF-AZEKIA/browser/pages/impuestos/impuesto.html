@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Datos</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <a href="/empresas">EMPRESAS</a>
+  <a href="/clientes">CLIENTES</a>
+  <a href="/proyectos">PROYECTOS</a>
+  <a href="/series">SERIES</a>
+  <a href="/facturas">FACTURAS</a>
+  <a href="/impuestos">IMPUESTOS</a>
+  <span class="usuario">Javier Ortega Cobos</span>
+</div>
+
+<!-- Tabla de Datos -->
+<h2>Listado de Impuestos</h2>
+
+<div class="contenedorBtn">
+  <button onclick="mostrarModalAgregarImpuesto()" id="btnAgregar"></button>
+</div>
+
+<table id="tablaImpuestos">
+  <tr>
+    <th>Impuesto Cod</th>
+    <th>Tipo de Impuesto</th>
+    <th>Porcentaje</th>
+    <th>Acciones</th>
+  </tr>
+  <!-- Aquí se insertarán los datos de la tabla Impuestos -->
+</table>
+
+<!-- Modal para agregar impuesto -->
+<div id="modalAgregarImpuesto" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Formulario para Agregar Impuesto</h3>
+    </div>
+    <form id="formularioAgregarImpuesto">
+      <div class="labelpck">
+        <label for="impuestoCod">Impuesto Cod</label><br>
+        <input type="text" id="impuestoCod" name="impuestoCod">
+      </div>
+      <div class="labelUQ">
+        <label for="tipoImpuesto">Tipo de Impuesto</label><br>
+        <select id="tipoImpuesto" name="tipoImpuesto"></select>
+      </div>
+      <div class="labelpck">
+        <label for="porcentaje">Porcentaje</label><br>
+        <input type="number" id="porcentaje" name="porcentaje" step="0.01" min="0" max="100">
+    </div>
+      <!-- Botón para guardar impuesto -->
+      <div class="footerForm">
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="guardarImpuesto()">Guardar</button>
+      </div>
+    </form>  
+  </div>
+</div>
+
+<!-- Modal para editar impuesto -->
+<div id="modalEditarImpuesto" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="tituloForm">
+      <h3>Editar Detalles del Impuesto</h3>
+    </div>
+    <form id="formularioEditarImpuesto">
+      <div class="labelpck">
+        <label for="impuestoCodEditar">Impuesto Cod</label><br>
+        <input type="text" id="impuestoCodEditar" name="impuestoCodEditar" readonly>
+      </div>
+      <div class="labelUQ">
+        <label for="tipoImpuestoEditar">Tipo de Impuesto</label><br>
+        <select id="tipoImpuestoEditar" name="tipoImpuestoEditar"></select>
+      </div>
+      <div class="labelpck">
+        <label for="porcentajeEditar">Porcentaje</label><br>
+        <input type="text" id="porcentajeEditar" name="porcentajeEditar">
+      </div>
+      <!-- Botones para acciones sobre el impuesto -->
+      <div class="footerForm">
+        <button class="btnBorrar" type="button" onclick="ClicEliminarImpuesto()">Borrar</button>
+        <button class="btnCancelar" type="button" onclick="cerrarModal()">Cancelar</button>
+        <button class="btnGuardar" type="button" onclick="actualizadaImpuesto()">Confirmar</button>
+      </div>
+    </form>   
+  </div>
+</div>
+
+<!-- Script para cargar datos de la tabla Impuestos -->
+<script defer src="../../pages/impuestos/impuesto.js"></script>
+<script defer src="../../pages/funcionesGenerales.js"></script>
+
+</body>
+</html>

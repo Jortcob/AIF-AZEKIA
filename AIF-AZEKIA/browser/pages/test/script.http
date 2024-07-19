@@ -1,0 +1,56 @@
+### Obtenemos lineas de la factura
+POST http://localhost:3000/obtenerFacturaLineas HTTP/1.1
+Content-Type: application/json
+
+
+  {
+  "empresaCod": "EM002",
+  "serieCod": "S002",
+  "facturaVentaNum": "1"
+
+  }
+
+### Agregamos linea a la factura
+POST http://localhost:3000/agregarFacturaLinea HTTP/1.1
+Content-Type: application/json
+
+
+  {
+  "empresaCod": "EM002",
+  "serieCod": "S002",
+  "facturaVentaNum": "1"
+
+  }
+
+### Rellenar factura linea
+POST http://localhost:3000/rellenarFacturaLinea HTTP/1.1
+Content-Type: application/json
+
+{"lineaFactura":
+  {
+  "empresaCod": "EM002",
+  "serieCod": "S002",
+  "facturaVentaNum": "1",
+  "facturaVentaLineaNum": "3",
+  "proyectoCod": "PR002",
+  "texto": "Línea de factura 2",
+  "cantidad": 8,
+  "precio": 5.40,
+  "importeBruto": 43.20,
+  "descuento": 0,
+  "tipoIVACod": "IVA4",
+  "tipoIRPFCod": "IRPF37"
+  }
+}
+
+### Obtenemos cuotas de la factura
+POST http://localhost:3000/obtenerFacturaLineas HTTP/1.1
+Content-Type: application/json
+
+
+  {
+  "empresaCod": "EM001",
+  "serieCod": "S001",
+  "facturaVentaNum": "3"
+
+  }
